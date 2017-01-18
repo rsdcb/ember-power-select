@@ -155,6 +155,11 @@ export default Component.extend({
     }
   }),
 
+  concatenatedFullClasses: computed('class', function() {
+    let classes = ['ember-power-select-trigger'];
+    return concatWithProperty(classes, this.get('class'));
+  }),
+
   concatenatedTriggerClasses: computed('triggerClass', 'publicAPI.isActive', function() {
     let classes = ['ember-power-select-trigger'];
     if (this.get('publicAPI.isActive')) {
